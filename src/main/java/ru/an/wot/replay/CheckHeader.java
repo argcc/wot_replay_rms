@@ -58,7 +58,8 @@ public class CheckHeader {
 		};
 	
 	public static final String[] exeVersion = {
-			"0.9.23.0"
+			"0.9.23.0",
+			"1.0.1.0"
 		}; 
 	
 	public void check(Replay rep) {
@@ -66,7 +67,7 @@ public class CheckHeader {
 		for(String arty : artyllery)
 			if(rep.vehicleName.endsWith(arty))
 				throw new ReplayException("Реплеи на артиллерии не поддерживаются");
-		
+
 		boolean vcheck = false;
 		for(String exev : exeVersion)
 			if(rep.clientVersionExe.endsWith(exev)) {
@@ -77,5 +78,6 @@ public class CheckHeader {
 		if(!vcheck)
 			throw new ReplayException(String.format("Неподдерживаемая версия реплея [exe:%s] [xml:%s]", 
 					rep.clientVersionExe, rep.clientVersionXml));
+
 	}
 }

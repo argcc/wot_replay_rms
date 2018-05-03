@@ -63,6 +63,13 @@ public class ReplayShots implements PacketIteratorCallback {
 			prjSTypeShort = 0x4434;
 		}
 		
+		if(replay.clientVersionExe.endsWith("1.0.1.0")) {
+			projectileSubType = 0x29;
+			recticleSubType = 0x23;
+			projectileDisp = 2;
+			prjSTypeShort = 0x4434;
+		}
+		
 		if(projectileSubType == -1 || projectileDisp == -1 || recticleSubType == -1)
 			throw new ReplayException("Не получилось определить идентификаторы типов");
 	}

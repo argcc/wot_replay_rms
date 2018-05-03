@@ -15,6 +15,10 @@ public class ReplayNearShotEvetns implements PacketIteratorCallback {
 	protected float lastShotTime;
 	protected StringBuffer sb = new StringBuffer();
 	protected int counter = 0;
+	
+	public String getResult() {
+		return sb.toString();
+	}
 
 	public ReplayNearShotEvetns(Replay replay, float timeDelta) throws Throwable {
 		super();
