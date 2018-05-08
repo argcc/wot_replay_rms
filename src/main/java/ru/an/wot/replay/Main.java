@@ -58,15 +58,23 @@ public class Main {
 	
 	public static void main(String[] args) throws Throwable{
 		
-//		File file = new File("E:/Games/World_of_Tanks_RU/replays/20180503_1307_germany-G106_PzKpfwPanther_AusfF_31_airfield.wotreplay");
-//		CheckHeader headerChecker = new CheckHeader();
-//		ByteArraySlice r = new ByteArraySlice(Files.readAllBytes(Paths.get(file.getPath())));
-//		Replay replay = new Replay(r, headerChecker);
+		File file = new File("E:/Games/World_of_Tanks_RU/replays/20180508_2304_italy-It13_Progetto_M35_mod_46_208_bf_epic_normandy.wotreplay");
+		CheckHeader headerChecker = new CheckHeader();
+		ByteArraySlice r = new ByteArraySlice(Files.readAllBytes(Paths.get(file.getPath())));
+		Replay replay = new Replay(r, headerChecker);
+		
+//		replay.iteratePackets(new ReplayStates());
+		
+		System.out.println(replay.header.toString(2));
+		
+//		new ReplayPrintAll(replay, new FileWriter(new File("replay_all.txt")));
+		
 //		System.out.println(new ReplayNearShotEvetns(replay, 0.0f).getResult());
-		//replay.iteratePackets(new ReplayStates());
+		
+//		replay.iteratePackets(new ReplayStates());
 		
 		
-		MainWindow mw = new MainWindow();
+		//MainWindow mw = new MainWindow();
 	}
 }
 

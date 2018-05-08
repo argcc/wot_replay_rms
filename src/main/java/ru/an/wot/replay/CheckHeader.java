@@ -64,6 +64,9 @@ public class CheckHeader {
 	
 	public void check(Replay rep) {
 		
+		if("epic".equals(rep.gameplayId))
+			throw new ReplayException("Реплеи Линии фронта не поддерживаются");
+		
 		for(String arty : artyllery)
 			if(rep.vehicleName.endsWith(arty))
 				throw new ReplayException("Реплеи на артиллерии не поддерживаются");

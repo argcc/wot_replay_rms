@@ -30,6 +30,12 @@ public class ReplayPrintAll implements PacketIteratorCallback {
 		
 		//if(type != 8 || packet.getInt(16) != 14) return true;
 		
+		if(type == 8 && packet.getInt(12) == replay.vehicleId && packet.getInt(16) == 0)
+			try {
+				out.write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + sep);
+			} catch (IOException e1) {
+			}
+		
 		try {
 			if(counter % 20 == 0){
 				out.write("                ");
